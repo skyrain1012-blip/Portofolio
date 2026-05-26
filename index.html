@@ -46,8 +46,9 @@
             <video class="modal-video" id="videoFull" controls style="display:none;"></video>
         </div>
     </div>
-<script src="config.js"></script>
-    <script src="script.js?v=8.0"></script>
-</body>
-</html>
-   
+<script>
+  // Jika dibuka di internet (GitHub), bikin password palsu/kosong biar kode script.js tidak eror
+  if (!window.PASSWORD_ADMIN) {
+      window.PASSWORD_ADMIN = "rahasia-dong-wkwk"; 
+  }
+</script>
