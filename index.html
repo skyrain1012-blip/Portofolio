@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Portfolio Sky</title>
+    <link rel="stylesheet" href="style.css?v=8.0">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Digital Portfolio</h1>
+        <p class="subtitle">Klik sampul proyek untuk melihat isi file</p>
+
+        <div style="text-align: center; margin-bottom: 25px;">
+            <button id="btn-lock" onclick="aksesAdmin()" style="background:#21262d; color:#58a6ff; border:1px solid #30363d; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold; transition: 0.2s;">🔓 Masuk Mode Admin</button>
+        </div>
+
+        <div class="form-box" id="admin-panel" style="display: none;">
+            <h2 style="color:#58a6ff; font-size:18px; margin-top:0;">Kelola Proyek</h2>
+            <div class="input-group">
+                <input type="text" id="judul" placeholder="Nama Folder">
+                <input type="text" id="sumber" placeholder="Nama file (contoh: desain.jpg, video.mp4)">
+                <input type="text" id="link" placeholder="Tautan Link Proyek (Contoh: Link Figma/Website)">
+                <button onclick="tambahProyek()" class="btn-simpan">Simpan ke Website</button>
+            </div>
+        </div>
+
+        <div id="project-list"></div>
+    </div>
+
+    <div id="folderModal" class="modal-folder">
+        <div class="modal-folder-content">
+            <span class="close-folder" onclick="closeFolderModal()">&times;</span>
+            <h2 id="modalFolderTitle" style="color:#58a6ff; margin-top:0; margin-bottom:20px;">📁 Isi Folder</h2>
+            <div id="modalFolderGrid" class="folder-grid-full"></div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <a class="prev" onclick="prevMedia()">&#10094;</a>
+        <a class="next" onclick="nextMedia()">&#10095;</a>
+        <div class="modal-body-content">
+            <img class="modal-content" id="imgFull" style="display:none;">
+            <video class="modal-video" id="videoFull" controls style="display:none;"></video>
+        </div>
+    </div>
+<script src="config.js"></script>
+    <script src="script.js?v=8.0"></script>
+</body>
+</html>
+   

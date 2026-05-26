@@ -1,0 +1,107 @@
+* { box-sizing: border-box; }
+body {
+    background-color: #0d1117; color: #e6edf3;
+    font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px;
+}
+.container { max-width: 100%; margin: 0 auto; }
+h1 { text-align: center; color: #58a6ff; }
+.subtitle { text-align: center; color: #8b949e; margin-bottom: 30px; }
+
+/* STYLE UNTUK TOMBOL GEMBOK ADMIN */
+#btn-lock {
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+}
+#btn-lock:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
+}
+
+/* Panel Admin */
+.form-box {
+    background: #161b22; border: 1px solid #30363d;
+    padding: 20px; border-radius: 12px; margin-bottom: 40px;
+}
+.input-group { display: flex; gap: 10px; flex-wrap: wrap; }
+input {
+    flex: 2; min-width: 200px; background: #0d1117;
+    border: 1px solid #30363d; color: white; padding: 12px; border-radius: 6px;
+}
+.btn-simpan {
+    background: #238636; color: white; border: none;
+    padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: bold;
+}
+
+/* LIST PROYEK */
+#project-list { display: flex; flex-wrap: wrap; gap: 25px; justify-content: flex-start; }
+
+/* KARTU */
+.project-card {
+    background: #161b22; border: 1px solid #30363d;
+    padding: 20px; border-radius: 15px; min-width: 280px; max-width: 320px;
+}
+
+/* SAMPUL */
+.folder-cover {
+    width: 100%; height: 280px; object-fit: cover;
+    border-radius: 10px; border: 3px solid #30363d;
+    cursor: pointer; transition: 0.3s; background: #000;
+}
+.folder-cover:hover { border-color: #58a6ff; }
+
+/* TAUTAN PROYEK */
+.project-link {
+    font-size: 11px; color: #58a6ff; text-decoration: none;
+    background: #21262d; padding: 5px 10px; border-radius: 4px;
+    border: 1px solid #30363d; font-weight: bold; transition: 0.2s; white-space: nowrap;
+}
+.project-link:hover { background: #30363d; color: #ecf2f8; }
+
+/* --- MODAL UNTUK ISI FOLDER FULL SCREEN --- */
+.modal-folder {
+    display: none; position: fixed; z-index: 999;
+    left: 0; top: 0; width: 100%; height: 100%; background: rgba(13, 17, 23, 0.95);
+    overflow-y: auto; padding: 40px 20px;
+}
+.modal-folder-content {
+    background: #161b22; border: 1px solid #30363d;
+    max-width: 900px; margin: 0 auto; padding: 30px; border-radius: 15px;
+    position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.close-folder { position: absolute; top: 15px; right: 25px; color: #8b949e; font-size: 35px; cursor: pointer; }
+.close-folder:hover { color: white; }
+
+/* GRID ISI FOLDER DI DALAM MODAL */
+.folder-grid-full {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px;
+}
+.grid-item-full img, .grid-item-full video {
+    width: 100%; height: 220px; object-fit: cover;
+    border-radius: 8px; border: 2px solid #30363d; cursor: pointer; transition: 0.2s;
+}
+.grid-item-full img:hover, .grid-item-full video:hover { border-color: #58a6ff; transform: scale(1.02); }
+
+/* --- MODAL IMAGE/VIDEO ZOOM --- */
+.modal {
+    display: none; position: fixed; z-index: 10000;
+    left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98);
+}
+.modal-body-content { display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; }
+.modal-content, .modal-video { margin: auto; display: block; max-width: 85%; max-height: 80vh; border-radius: 10px; outline: none; }
+.close { position: absolute; top: 20px; right: 35px; color: white; font-size: 50px; cursor: pointer; z-index: 10001; }
+
+/* PANAH GESER ZOOM */
+.prev, .next {
+    cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%);
+    padding: 20px 16px; color: white; font-weight: bold; font-size: 30px;
+    transition: 0.3s; border-radius: 5px; user-select: none; text-decoration: none;
+    background-color: rgba(22, 27, 34, 0.6); z-index: 10001;
+}
+.prev { left: 20px; }
+.next { right: 20px; }
+.prev:hover, .next:hover { background-color: #58a6ff; }
+
+@media (max-width: 600px) {
+    .prev, .next { font-size: 20px; padding: 12px 10px; }
+    .prev { left: 5px; } .next { right: 5px; }
+}
