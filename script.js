@@ -1,5 +1,5 @@
 const databaseURL = "https://portofolio-3293e-default-rtdb.asia-southeast1.firebasedatabase.app/.json"; 
-const PASSWORD_ADMIN = window.PASSWORD_ADMIN || "langit123";
+const PASSWORD_ADMIN = window.PASSWORD_ADMIN;
 
 let currentData = [];
 let editIndex = -1;
